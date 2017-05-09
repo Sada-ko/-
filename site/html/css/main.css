@@ -1,0 +1,965 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: 'PT Sans', sans-serif;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body{
+    background-color: #01040d;
+    color: white;
+    background-image: url("../img/header_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #8d9db0;
+    transition: 0.2s;
+}
+
+a:hover{
+    color: #7ea1d1;
+}
+
+
+
+/*Header*/
+
+#header{
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    position: relative;
+}
+
+#header .home_logo{
+    display: inline-block;
+    width: 185px;
+    height: 89px;
+    background-image: url("../img/grogard_logo_white.png");
+    background-size: contain;
+    border: none;
+}
+
+.slogan {
+    display: inline-block;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-left: 30px;
+    margin-top: 26px;
+    vertical-align: top;
+    color: #999c9a;
+}
+
+.home_logo:hover{
+    opacity: 0.5;
+}
+
+#header .phone{
+    border: medium none;
+    color: white;
+    display: inline-block;
+    font-size: 2em;
+    text-decoration: none;
+    margin-right: 0.5em;
+}
+
+#header .phone span{
+    font-size: 0.5em;
+}
+
+#header ul.menu{
+    display: block;
+    width: 100%;
+    height: 53px;
+    background-image: url("../img/header_menu_bg.jpg");
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 6px 0 #0c2e4e;
+    margin-top: -13px;
+    text-align: center;
+}
+
+#header ul.menu li{
+    display: inline-block;
+    font-size: 1.2em;
+    height: 31px;
+    list-style: outside none none;
+    padding: 0.6em 2.35em;
+    border-left: 1px solid #0a2948;
+    border-right: 1px solid #174c69;
+    transition: 0.2s;
+}
+
+#header ul.menu li:nth-child(1){
+    border-left: none;
+    border-radius: 5px 0 0 5px;
+}
+
+#header ul.menu li:nth-child(5){
+    border-right: none;
+    border-radius: 0 5px 5px 0;
+}
+
+#header ul.menu li:hover{
+    background-color: #0a2948;
+    box-shadow: 0 5px 0 #0a1c2e;
+}
+
+#header ul.menu li:hover a{
+    text-shadow: 0 1px 1px #000000;
+}
+
+#header ul.menu li a{
+    color: white;
+}
+
+#header ul.menu li.selected{
+    background-color: white;
+    box-shadow: 0 5px 0 #dddddd;
+    border-radius: 5px;
+    border: none;
+    color: #0a2948;
+}
+
+#header ul.menu li.selected a{
+    border: none;
+    color: #0a2948;
+}
+
+#header .rightside{
+    position: absolute;
+    right: 6px;
+    top: 38px;
+}
+
+
+
+/*Content*/
+
+#content_wrapper{
+    min-height: 500px;
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    /*display: inline-block;*/
+}
+
+.content h1 {
+    padding-right: 5em;
+}
+
+ul.tech_menu{
+    text-align: center;
+    font-size: 2em;
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+
+ul.tech_menu li{
+    display: inline-block;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+ul.tech_menu li.selected{
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    background-image: url("../img/content_bg.jpg");
+    background-position: -250px -50px;
+    position: relative;
+}
+
+ul.tech_menu li.selected:after{
+    content: '';
+    position: absolute; /* Абсолютное позиционирование */
+    left: 48%; bottom: -20px; /* Положение треугольника */
+    border: 10px solid transparent; /* Прозрачные границы */
+    border-top: 10px solid #092b50; /* Добавляем треугольник */
+    margin-right: 10px;
+}
+
+
+/*Слайдер*/
+
+#slider_content{
+    width: 100%;
+    height: 250px;
+    margin-bottom: 3em;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+#slider_content .slider_bg{
+    width: 100%;
+    position: absolute;
+    top: 36px;
+    background-image: url("../img/content_bg.jpg");
+    border-radius: 5px;
+    height: 100%;
+    z-index: 1;
+}
+
+#slider_content .text{
+    display: inline-block;
+    margin-right: 3%;
+    text-align: center;
+    width: 50%;
+}
+
+#slider_content h2{
+    font-weight: bold;
+    font-size: 4em;
+    margin: 0;
+}
+
+#slider_content .sub_head{
+    color: #99afc3;
+    font-size: 1.5em;
+}
+
+#slider_content .desc{
+    text-align: left;
+}
+
+#slider_content .graphic{
+    display: inline-block;
+    max-width: 30%;
+    vertical-align: top;
+}
+
+#slider_content .buy_button{
+    bottom: 1.5em;
+    position: absolute;
+    right: 10em;
+}
+
+#slider_content .buy_button a {
+    background-image: url("../img/download_button.png");
+    background-size: 200% auto;
+    border: medium none;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1.5em;
+    height: 56px;
+    padding: 0.8em;
+    text-align: center;
+    transition: all 0s ease 0s;
+    width: 200px;
+}
+
+#slider_content .buy_button a:hover{
+    background-position: right;
+    color: white;
+}
+
+#slider_content .list{
+    content: '';
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 10em; /* Положение треугольника */
+    border: 15px solid transparent; /* Прозрачные границы */
+    opacity: 0.3;
+    z-index: 3;
+}
+
+#slider_content .left{
+    border-right: 15px solid #ffffff; /* Добавляем треугольник */
+    left: 0;
+}
+
+#slider_content .right{
+    border-left: 15px solid #ffffff; /* Добавляем треугольник */
+    right: 0;
+}
+
+#slider_content > ul {
+    z-index: 2;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    list-style: none;
+}
+
+#slider_content ul li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 940px;
+    height: 300px;
+}
+
+#slider_content ul li > div{
+    padding: 55px 6em;
+}
+
+.slider_option{
+    display: none;
+}
+
+
+
+/*Наши преимущества*/
+
+.priorities{
+    text-align: center;
+    color: white;
+    margin-bottom: 5em;
+}
+
+.priorities > h2 {
+    font-size: 2.5em;
+    font-weight: 100;
+}
+
+.priorities h3 {
+    font-size: 1.6em;
+}
+
+.priorities > div{
+    vertical-align: top;
+    display: inline-block;
+    width: 250px;
+    margin: 0 1.5em;
+}
+
+.priorities .icon{
+    width: 108px;
+    height: 108px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.priorities > div:nth-child(2) .icon{
+    background-image: url("../img/adapt_icon.png");
+    background-size: contain;
+}
+
+.priorities > div:nth-child(3) .icon{
+    background-image: url("../img/percent_icon.png");
+    background-size: contain;
+}
+
+.priorities > div:nth-child(4) .icon{
+    background-image: url("../img/handshake_icon.png");
+    background-size: contain;
+}
+
+
+.main{
+    background-image: url("../img/content_bg.jpg");
+    background-size: cover;
+    border-radius: 5px;
+    padding: 2em 40px 4em;
+    margin-bottom: 7em;
+    margin-top: 2em;
+}
+
+
+.content{
+    position: relative;
+}
+
+
+/*Хлебные крошки*/
+
+.breadcrumbs{
+    margin-bottom: 50px;
+}
+
+.breadcrumbs div{
+    display: inline;
+    color: #999c9a;
+}
+
+
+/*Продукты*/
+
+.products{
+    /*text-align: justify;*/
+}
+
+.product_preview{
+    display: inline-block;
+    margin-right:35px;
+    margin-bottom: 30px;
+    vertical-align: top;
+    width: 30%;
+}
+
+.product_preview:nth-child(3n + 4){
+    margin-right: 0;
+}
+
+.product_preview .product_image{
+    border: 1px solid #ffffff;
+    display: block;
+    overflow: hidden;
+}
+
+.product_preview .product_image:hover img{
+    transform: scale(1.1,1.1);
+}
+
+.product_preview img{
+    width: 100%;
+    transition: 0.1s;
+}
+
+.product_preview a.header{
+    font-size: 2em;
+}
+
+.download_product{
+    background-color: #0a1c2e;
+    border: medium none;
+    border-radius: 5px;
+    box-shadow: 5px 3px 13px #000000;
+    display: block;
+    font-size: 0.9em;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: 20px;
+    width: 140px;
+    transition: 0.1s;
+}
+
+.download_product:hover{
+    box-shadow: none;
+    color: #ffffff;
+    top: 23px;
+    right: 17px;
+}
+
+
+
+/*Боковое меню*/
+
+.cabinet{
+    display: inline-block;
+    vertical-align: top;
+    width: 630px;
+}
+
+.side_menu {
+    border-right: 1px solid;
+    display: inline-block;
+    font-size: 1.5em;
+    margin-left: -40px;
+    margin-right: 60px;
+    margin-top: 63px;
+    padding-top: 50px;
+    vertical-align: top;
+    width: 160px;
+    padding-bottom: 1em;
+}
+
+.side_menu div{
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-top: 20px;
+    margin-bottom: 1px;
+}
+
+.side_menu div:hover{
+    background-color: #0a2948;
+}
+
+.side_menu .selected{
+    background-color: #0a2948;
+}
+
+
+/*Заказы*/
+
+.orders{
+    list-style: none;
+    padding: 0;
+}
+
+.orders li{
+    border-bottom: 1px solid #b3d4fc;
+    padding-left: 2em;
+}
+
+.orders h2 {
+    margin-left: -1em;
+}
+
+.orders li span {
+    display: block;
+    font-size: 0.8em;
+    font-style: italic;
+    margin-top: -16px;
+}
+
+
+/*Карта*/
+
+.map{
+    margin-top: 2em;
+    width: 600px;
+    height: 450px;
+}
+
+
+/*Формы*/
+
+form.personal {
+    margin: 2em 0;
+}
+
+form span {
+    display: inline-block;
+    padding: 0 1em;
+    text-align: right;
+    width: 150px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 1em;
+}
+
+form input.name{
+    min-width: 150px;
+}
+
+form input.email{
+    min-width: 200px;
+}
+
+form input.password{
+    min-width: 110px;
+}
+
+.subscribe {
+    padding: 5px 5px 20px 210px;
+    position: relative;
+}
+
+.subscribe > input {
+    left: 180px;
+    margin-bottom: 13px;
+    margin-right: 1em;
+    margin-top: -25px;
+    position: absolute;
+    top: 33px;
+}
+
+form button {
+    background-image: url("../img/header_menu_bg.jpg");
+    border: 0 none;
+    border-radius: 5px;
+    box-shadow: 0 6px 0 #0c2e4e;
+    padding: 0.5em 2em;
+    text-shadow: 1px 2px 0 #0c2e4e;
+    transition: 0.1s;
+}
+
+.personal button{
+    margin-left: 182px;
+}
+
+form button:hover{
+    background-position: center;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.personal button:hover{
+    margin: 3px 0 -3px 182px;
+}
+
+
+/*Регистрация*/
+
+.registration{
+    display: inline-block;
+    position: relative;
+}
+
+.pseudo{
+    border-bottom-style: dotted;
+}
+
+.registration .pop_up .pseudo{
+    line-height: 21px;
+    position: absolute;
+    right: 14px;
+    top: 15px;
+}
+
+.registration > .pseudo{
+    top: 14px;
+    right: 14px;
+    line-height: 22px;
+    padding: 0;
+}
+
+.pop_up{
+    /*opacity: 0.5;*/
+    visibility: hidden;
+    transition: all 0.2s ease 0s;
+}
+
+.registration .pop_up{
+    z-index: 4;
+    background-image: url("../img/content_bg.jpg");
+    border-radius: 10px;
+    box-shadow: 3px 3px 27px #000000;
+    padding: 4em 4em 2em 0;
+    position: absolute;
+    right: -14px;
+    top: -15px;
+    min-width: 430px;
+}
+
+.registration .pseudo:hover{
+    color: #ffffff;
+    border-bottom-color: #8d9db0;
+}
+
+.registration .pseudo:hover ~ .pop_up,
+.registration .pop_up:hover{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.registration form{
+    /*padding: 1em 2em;*/
+}
+
+.register{
+    position: relative;
+    padding-left: 205px;
+}
+
+.register > input{
+    left: 183px;
+    position: absolute;
+    top: 4px;
+}
+
+.registration button{
+    margin-left: 185px;
+}
+
+.registration button:hover{
+    background-position: right;
+    margin: 3px 0 -3px 185px;
+}
+
+
+
+/*Вход*/
+
+.enter{
+    display: inline-block;
+    /*position: absolute;*/
+    /*right: 6px;*/
+    /*top: 54px;*/
+}
+
+
+
+
+/*Footer*/
+
+.call_us{
+    position: relative;
+    width: 100%;
+    height: 292px;
+    background-image: url("../img/content_bg.jpg");
+    background-position: center;
+    border-radius: 5px;
+    margin-bottom: 4em;
+}
+
+.call_us:after{
+    display: block;
+    position: absolute;
+    content: "";
+    width: 107px;
+    height: 187px;
+    background-image: url("../img/lizard.png");
+    top: -10px;
+    right: -20px;
+    background-size: contain;
+    right: -24px;
+    top: -49px;
+}
+
+.call_us img {
+    left: 30px;
+    position: absolute;
+    top: 40px;
+}
+
+.call_us .contact{
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.call_us .contact p{
+    margin-bottom: 0;
+}
+
+.call_us .contact span{
+    font-size: 2.5em;
+    display: block;
+}
+
+.call_us .contact a{
+    font-size: 1em;
+}
+
+.call_us .contact a{
+    color: white !important;
+}
+
+.call_us .contact a:hover{
+    color: #7ea1d1 !important;
+}
+
+#footer_wrapper{
+    background-image: url("../img/header_bg.jpg");
+    background-repeat: no-repeat;
+    background-position-y: 10%;
+}
+
+#footer{
+    min-height: 200px;
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #999c9a;
+    padding-bottom: 3em;
+}
+
+#footer .home_logo{
+    display: inline-block;
+    width: 185px;
+    height: 89px;
+    background-image: url("../img/grogard_logo_gray.png");
+    background-size: contain;
+    border: none;
+    margin-bottom: -2em;
+}
+
+#footer .home_logo:hover{
+    opacity: 0.5;
+}
+
+#footer .left{
+    display: inline-block;
+    margin-right: 10px;
+    text-align: right;
+    vertical-align: top;
+    margin-left: -48px;
+}
+
+#footer .center{
+    text-align: right;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 2em;
+}
+
+#footer ul{
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 10px;
+    list-style: none;
+}
+
+#footer ul li{
+    margin-bottom: 0.5em;
+}
+
+#footer h3{
+    font-size: 1.5em;
+    font-weight: 100;
+    /*margin-top: 0.5em;*/
+    margin: 0.5em 0;
+}
+
+#footer a{
+    color: #7ea1d1;
+}
+
+#footer a:hover{
+    color: white;
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}

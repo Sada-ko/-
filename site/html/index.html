@@ -1,0 +1,386 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="header">
+    <a href="/" class="home_logo"></a>
+
+    <div class="slogan">
+        Тестовый слоган
+    </div>
+
+    <div class="rightside">
+
+        <a href="tel:+78121234546" class="phone"><span>(812) </span>123-45-46</a>
+
+
+        <!--Вход на сайт-->
+        <div class="registration">
+            <a class="pseudo" href="#">Вход</a>
+
+            <div class="pop_up">
+                <a class="pseudo" href="#">Вход</a>
+
+                <form class="" method="post">
+
+                    <label>
+                        <span>Электронная почта:</span>
+                        <input type="email" required="required" class="email" placeholder="example@example.com" name="">
+                    </label>
+
+                    <label>
+                        <span>Пароль:</span>
+                        <input type="password" required="required" class="password" placeholder="password" name="">
+                    </label>
+
+                    <label class="register">
+                        <input type="checkbox"/>
+                        Я хочу зарегистрироваться
+                    </label>
+
+                    <button type="submit">Готово!</button>
+
+                </form>
+            </div>
+        </div>
+
+
+        <!--Ссылка на личный кабинет-->
+        <!--Блок .registration нужно закомментировать, а нижеследующую ссылку раскомментировать-->
+        <!--<a href="#" class="enter">Личный кабинет</a>-->
+
+    </div>
+
+    <!--Главное меню-->
+    <!--Выбранный пункт: к li добавляется класс .selected и убирается тег <a href="#"></a>-->
+
+    <ul class="menu">
+        <li>
+            <a href="#">
+                О нас
+            </a>
+        </li><li>
+            <a href="#">
+                Проекты
+            </a>
+        </li><li>
+            <a href="#">
+                Продукты
+            </a>
+        </li><li>
+            <a href="#">
+                Техническая поддержка
+            </a>
+        </li><li>
+            <a href="#">
+                Контакты
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+<div id="content_wrapper">
+
+    <!--Разводящая менюшка главной-->
+    <ul class="tech_menu">
+        <li class="selected">
+            Создание сайтов
+        </li>
+        <li>
+            <a href="#">
+                Разработка ПО
+            </a>
+        </li>
+    </ul>
+
+    <!--Слайдер-->
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            setInterval(function () {
+                moveRight();
+            }, 7000);
+
+            var slideCount = $('#slider_content ul li').length;
+            var slideWidth = $('#slider_content ul li').width();
+            var slideHeight = $('#slider_content ul li').height();
+            var sliderUlWidth = slideCount * slideWidth;
+
+            $('#slider_content').css({ width: slideWidth, height: slideHeight });
+
+            $('#slider_content ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+            $('#slider_content ul li:last-child').prependTo('#slider_content ul');
+
+            function moveLeft() {
+                $('#slider_content ul').animate({
+                    left: + slideWidth
+                }, 200, function () {
+                    $('#slider_content ul li:last-child').prependTo('#slider_content ul');
+                    $('#slider_content ul').css('left', '');
+                });
+            };
+
+            function moveRight() {
+                $('#slider_content ul').animate({
+                    left: - slideWidth
+                }, 200, function () {
+                    $('#slider_content ul li:first-child').appendTo('#slider_content ul');
+                    $('#slider_content ul').css('left', '');
+                });
+            };
+
+            $('a.left').click(function () {
+                moveLeft();
+            });
+
+            $('a.right').click(function () {
+                moveRight();
+            });
+
+        });
+    </script>
+
+    <div id="slider_content">
+
+        <div class="slider_bg"></div>
+
+        <a href="#" class="list left"></a>
+        <a href="#" class="list right"></a>
+
+        <ul>
+            <li>
+                <div>
+                    <div class="text">
+                        <h2>
+                            Трекер посылок
+                        </h2>
+
+                        <div class="sub_head">
+                            Отслеживание почтовых отправлений
+                        </div>
+
+                        <div class="desc">
+                            <p>Приложение предназначено для отслеживания почтовых отправлений.</p>
+                            <p>Актуально только для посылок, отправленных на&nbsp;или с&nbsp;территории Российской Федерации.</p>
+                        </div>
+                    </div>
+                    <div class="graphic">
+                        <img style="height: 310px; margin-left: 130px; margin-top: -56px;" src="img/post_tracker_promo.png" alt="">
+                        <a href=""></a>
+                    </div>
+                    <div class="buy_button">
+                        <a href="#">Download now!</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <div class="text">
+                        <h2>
+                            Трекер посылок
+                        </h2>
+
+                        <div class="sub_head">
+                            Отслеживание почтовых отправлений
+                        </div>
+
+                        <div class="desc">
+                            <p>Приложение предназначено для отслеживания почтовых отправлений.</p>
+                            <p>Актуально только для посылок, отправленных на&nbsp;или с&nbsp;территории Российской Федерации.</p>
+                        </div>
+                    </div>
+                    <div class="graphic">
+                        <img style="height: 310px; margin-left: 130px; margin-top: -56px;" src="img/post_tracker_promo.png" alt="">
+                        <a href=""></a>
+                    </div>
+                    <div class="buy_button">
+                        <a href="#">Download now!</a>
+                    </div>
+                </div>
+            </li>
+            <!--<li>-->
+                <!--<div>-->
+                    <!--<div class="text">-->
+                        <!--<h2>-->
+                            <!--Product3-->
+                        <!--</h2>-->
+
+                        <!--<div class="sub_head">-->
+                            <!--some description-->
+                        <!--</div>-->
+
+                        <!--<div class="desc">-->
+                            <!--<p>The new features in Flash Professional CS5 should bring smiles to the faces of both designers-->
+                                <!--and-->
+                                <!--developers. The new features in Flash Professional CS5 should bring smiles to the faces of-->
+                                <!--both-->
+                                <!--designers and developers.</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="graphic">-->
+                        <!--<img style="margin-top: -3em;" src="img/product_image_1.png" alt=""/>-->
+                        <!--<a href=""></a>-->
+                    <!--</div>-->
+                    <!--<div class="buy_button">-->
+                        <!--<a href="#">Download now!</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<div>-->
+                    <!--<div class="text">-->
+                        <!--<h2>-->
+                            <!--Product4-->
+                        <!--</h2>-->
+
+                        <!--<div class="sub_head">-->
+                            <!--some description-->
+                        <!--</div>-->
+
+                        <!--<div class="desc">-->
+                            <!--<p>555</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="graphic">-->
+                        <!--<img style="margin-top: -3em;" src="img/product_image_1.png" alt=""/>-->
+                        <!--<a href=""></a>-->
+                    <!--</div>-->
+                    <!--<div class="buy_button">-->
+                        <!--<a href="#">Download now!</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+        </ul>
+    </div>
+
+    <div class="slider_option">
+        <input checked="checked" type="checkbox" id="checkbox">
+        <label for="checkbox">Autoplay Slider</label>
+    </div>
+
+
+
+
+    <!--Блок преимуществ-->
+
+    <div class="priorities">
+
+        <h2>Наши преимущества</h2>
+
+        <div>
+            <h3>Адаптивный<br>дизайн</h3>
+
+            <div class="icon"></div>
+            <p>The new features in Flash Professional CS5 should bring smiles to the faces of both designers and
+                developers. The new features in Flash Professional CS5 should bring smiles to the faces of both
+                designers and developers.</p>
+        </div>
+
+        <div>
+            <h3>Гибкие<br>условия</h3>
+
+            <div class="icon"></div>
+            <p>The new features in Flash Professional CS5 should bring smiles to the faces of both designers and
+                developers. The new features in Flash Professional CS5 should bring smiles to the faces of both
+                designers and developers.</p>
+        </div>
+
+        <div>
+            <h3>Внимательное отношение</h3>
+
+            <div class="icon"></div>
+            <p>The new features in Flash Professional CS5 should bring smiles to the faces of both designers and
+                developers. The new features in Flash Professional CS5 should bring smiles to the faces of both
+                designers and developers.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="footer_wrapper">
+    <div id="footer">
+
+        <div class="call_us">
+            <img src="img/phone.png" width="314" alt=""/>
+
+            <div class="contact">
+                <p>Станьте нашим клиентом прямо сейчас</p>
+                <span><a href="tel:+78121234546">(812) 123-45-67</a></span>
+                <a href="mailto:info@grogard.ru">info@grogard.ru</a>
+            </div>
+        </div>
+
+        <div class="left">
+            <a href="/" class="home_logo"></a>
+
+            <p>&copy;&nbsp;2016</p>
+        </div>
+
+        <div class="center">
+            <ul>
+                <h3>О компании</h3>
+                <li>
+                    <a href="#">
+                        Связь с нами
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Коллектив
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Партнёрство
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <h3>Наши продукты</h3>
+                <li>
+                    <a href="#">
+                        Веб-разработка
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Разработка ПО
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
